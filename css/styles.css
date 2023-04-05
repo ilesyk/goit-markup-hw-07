@@ -34,7 +34,7 @@ ul {
 }
 img {
     display: block;
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 .visually-hidden {
@@ -50,17 +50,14 @@ img {
   overflow: hidden;
 }
 .container {
-    max-width: 1158px;
+    width: 100%;
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
 }
 .flex-list {
     display: flex;
-    gap: 24px;
-}
-.section {
-    padding: 120px 0;
+    flex-wrap: wrap;
 }
 /*header*/
 .logo {
@@ -72,7 +69,6 @@ letter-spacing: 0.03em;
 text-transform: uppercase;
 text-decoration: none;
 color: var(--brand-color);
-margin-right: 76px;
 transition: color var(--transition);
 }
 .logo:is(:hover, :focus) {
@@ -153,20 +149,17 @@ color: var(--button-hover);
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/herobg.jpg);
     background-repeat: no-repeat;
     background-position: center;
-padding: 188px 0;
+padding: 112px 0;
 }
 .hero-header {
-max-width: 496px;
+max-width: 320px;
 font-weight: 700;
-font-size: 56px;
-line-height: 1.07;
+font-size: 36px;
+line-height: 1.11;
 letter-spacing: 0.02em;
 text-align: center;
 color: var(--white);
-margin: 0 auto 48px;
-}
-.hero-continer {
-    background-color: var(--hero-background);
+margin: 0 auto 72px;
 }
 .order-button {
     font-family: 'Roboto', sans-serif;
@@ -192,38 +185,42 @@ transition: background-color var(--transition);
 }
 /*advantages*/
 .advantages {
-    padding-bottom: 0;
+    padding: 96px 0;
 }
 .advantages-item {
-    flex-basis: calc((100% - 72px) / 4);
+    width: 100%;
 }
 .advantages-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 112px;
-    background-color: var(--light-background);
-    margin-bottom: 8px;
+    display: none;
 }
 .advantages-icon svg {
     width: 64px;
     height: 64px;
-
+}
+.container-advantages > .flex-list {
+    gap: 72px;
 }
 .advantages-title {
     margin-bottom: 8px;
-    font-weight: 500;
-font-size: 20px;
-line-height: 1.2;
+    font-weight: 700;
+font-size: 36px;
+line-height: 1.11;
 letter-spacing: 0.02em;
 color: var(--navy-blue);
+text-align: center;
 }
 .text-style {
+font-weight: 500;
+font-size: 16px;
 line-height: 1.5;
 letter-spacing: 0.02em;
+color: var(--slate);
 }
 /*products*/
-.products-title, .team-title, .clients-title {
+.products {
+    display: none;
+}
+.team-title, .clients-title {
     margin-bottom: 72px;
 font-weight: 700;
 font-size: 36px;
@@ -233,20 +230,27 @@ letter-spacing: 0.02em;
 text-transform: capitalize;
 color: var(--navy-blue);
 }
-.product-image {
-    flex-basis: calc((100% - 48px) / 3);
-}
+
+/*team*/
 .team {
     background-color: var(--light-background);
+    padding: 96px 0;
+}
+.team > .container {
+        max-width: 294px;
+    }
+.container-team > .flex-list {
+    gap: 72px;
 }
 .team-member {
     line-height: 1.11;
-    flex-basis: calc((100% - 72px) / 4);
+    width: 100%;
     padding-bottom: 32px;
 box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 border-radius: 0px 0px 4px 4px;
 background-color: var(--background-color);
 text-align: center;
+align-items: center;
 }
 .team-name {
 margin-top: 32px;
@@ -259,9 +263,11 @@ color: var(--navy-blue);
 }
 .team-soc-list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 24px;
     margin-top: 8px;
+    padding: 0 16px;
 }
 .team-soc-link {
     width: 40px;
@@ -281,8 +287,13 @@ width: 16px;
 height: 16px;
 }
 /*clients*/
-.clients-item {
-    flex-basis: calc((100% - 120px) / 6);
+.clients {
+    padding: 96px 0;
+}
+.clients-list {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 72px 16px;
 }
 .clients-link {
     display: inline-block;
@@ -319,8 +330,11 @@ color: var(--cornflower);
 }
 .container-footer {
     display: flex;
-    align-items: start;
-    gap: 120px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 72px;
 }
 .footer-head {
     font-family: 'Roboto';
@@ -331,8 +345,11 @@ letter-spacing: 0.02em;
 color: var(--white);
 margin-bottom: 16px;
 }
+.footer-soc > .flex-list {
+    gap: 16px;
+}
 .footer-soc-item {
-background-color: rgb(255,255,255,0.1);
+background-color: var(--brand-color);
 border-radius: 50%;
 width: 40px;
 height: 40px;
@@ -353,7 +370,7 @@ transition: background-color var(--transition);
     height: 24px;
 }
 .footer-input-email {
-    min-width: 264px;
+    width: 100%;
 height: 40px;
 background-color: transparent;
 border: 1px solid var(--white);
@@ -362,6 +379,7 @@ border-radius: 4px;
 outline: transparent;
 padding: 8px 16px;
 color: var(--white);
+
 }
 .footer-input-email::placeholder {
     font-family: 'Roboto';
@@ -399,8 +417,13 @@ transition: background-color var(--transition);
 .footer-submit-button:is(:hover, :focus) {
     background-color: var(--button-hover);
 }
+.footer-input {
+    text-align: center;
+}
 .footer-input-wrap {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
 }
 .plane-icon {
@@ -435,7 +458,7 @@ border-color: transparent;
 }
 .portfolio-item {
 background: var(--white);
-flex-basis: calc((100% - 48px) / 3);
+width: 100%;
 transition: box-shadow var(--transition);
 position: relative;
 }
@@ -471,7 +494,7 @@ color: var(--slate);
     width: 100%;
     height: 100%;
     padding: 40px 32px;
-    color: var(--white);
+    color: var(--light-background);
     background-color: var(--brand-color);
     transform: translateY(100%);
     transition: transform var(--transition);
@@ -484,21 +507,26 @@ color: var(--slate);
     border-top: none;
     padding: 32px 16px;
 }
+.portfolio-description-text {
+    font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.02em;
+color: var(--light-background);
+}
 .container-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 16px 24px;
+    margin-bottom: 48px;
 }
-.container-portfolio {
-    margin-top: 72px;
+.portfolio-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 48px 24px;
 }
 .portfolio-section {
-    padding-top: 96px;
-    padding-bottom: 120px;
+    padding-top: 48px;
+    padding-bottom: 48px;
 }
 .backdrop {
     position: fixed;
@@ -510,7 +538,7 @@ color: var(--slate);
 }
 .modal {
     width: 100%;
-    max-width: 408px;
+    max-width: 392px;
 min-height: 576px;
 background: var(--dairy);
 box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
