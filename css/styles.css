@@ -59,6 +59,13 @@ img {
     display: flex;
     flex-wrap: wrap;
 }
+.link {
+    text-decoration: none;
+    transition: color var(--transition);
+}
+.list {
+    list-style: none;
+}
 /*header*/
 .logo {
     font-family: 'Raleway', sans-serif;
@@ -77,65 +84,22 @@ transition: color var(--transition);
 .logo-color-header {
 color: var(--navy-blue);
 }
-.list {
-    list-style: none;
-}
 .header {
     border-bottom: 1px solid var(--cornflower);
-    padding-top: 24px;
-    padding-bottom: 20px;
 }
 .container-header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 .nav-logo {
     display: flex;
 }
-.nav-menu {
-    display: flex;
-    gap: 40px;
-}
-.nav-item::after {
-    content: '';
-    display: flex;
-    width: 100%;
-height: 4px;
-background: #404BBF;
-border-radius: 2px;
-position: relative;
-top: 20px;
-}
+.nav-menu,
 .nav-contacts {
-    display: flex;
-    gap: 40px;
-}
-.navigation-link {
-font-family: 'Roboto', sans-serif;
-font-weight: 500;
-font-size: 16px;
-line-height: 1.5;
-letter-spacing: 0.02em;
-text-decoration: none;
-color: var(--navy-blue);
-transition: color var(--transition);
-}
-.link {
-    text-decoration: none;
-    transition: color var(--transition);
-}
-.contacts {
-    font-style: normal;
-}
-.mail-tel {
-    font-style: normal;
-font-size: 16px;
-line-height: 1.5;
-letter-spacing: 0.02em;
-text-decoration: none;
-color: var(--text-color);
-transition: color var(--transition);
+    display: none;
 }
 .navigation-link:hover,
 .navigation-link:focus,
@@ -143,13 +107,110 @@ transition: color var(--transition);
 .mail-tel:focus {
 color: var(--button-hover);
 }
+
+.menu-open {
+    background-color: transparent;
+    border: none;
+}
+.menu-icon {
+    stroke: var(--navy-blue);
+}
+.mob-menu {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: var(--white);
+    padding: 24px 24px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translateX(0);
+    transition: transform var(--transition);
+}
+.mob-menu.is-hidden {
+    transform: translateX(100%);
+    transition: transform var(--transition);
+}
+.menu-close {
+    width: 24px;
+    height: 24px;
+    display: flex;
+justify-content: center;
+align-items: center;
+background: rgba(231,233,252, 0.1);
+border: 1px solid rgba(0, 0, 0, 0.1);
+border-radius: 50%;
+margin-left: auto;
+margin-bottom: 32px;
+}
+.menu-link {
+    text-decoration: none;
+    font-weight: 700;
+font-size: 36px;
+line-height: 1.11;
+letter-spacing: 0.02em;
+color: var(--navy-blue);
+}
+
+.menu-item:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.menu-tel {
+    font-weight: 700;
+font-size: 36px;
+line-height: 1.11;
+letter-spacing: 0.02em;
+color: var(--brand-color);
+}
+.menu-tel-item {
+    margin-bottom: 40px;
+}
+.menu-mail {
+    font-weight: 500;
+font-size: 20px;
+line-height: 1.2;
+letter-spacing: 0.02em;
+color: var(--slate);
+}
+.menu-mail-item {
+    margin-bottom: 48px;
+}
+.menu-soc-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 56px;
+}
+.menu-soc-item {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--brand-color);
+    }
+.menu-soc-link {
+width: 40px;
+height: 40px;
+display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /*hero*/
 .hero {
     background-color: var(--hero-background);
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/herobg.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bcg-mob.jpg);
     background-repeat: no-repeat;
     background-position: center;
 padding: 112px 0;
+}
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .box {
+    background-image: url(../images/hero-bcg-mob-2x.jpg);
+  }
 }
 .hero-header {
 max-width: 320px;
@@ -539,7 +600,7 @@ color: var(--light-background);
 .modal {
     width: 100%;
     max-width: 392px;
-min-height: 576px;
+height: 576px;
 background: var(--dairy);
 box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
 border-radius: 4px;
@@ -549,6 +610,7 @@ left: 50%;
 transform: translate(-50%, -50%) scale(1);
 transition: transform var(--transition);
 padding: 24px;
+overflow: auto;
 }
 .backdrop.is-hidden .modal {
     transform: translate(-50%, -50%) scale(0.8);

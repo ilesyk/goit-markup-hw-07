@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/media.css">
   </head>
   <body>
-    <!-- <header class="header">
+    <header class="header">
       <div class="container container-header">
         <nav class="nav-logo">
           <a href="./index.html" class="logo">Web<span class="logo-color-header">Studio</span></a>
@@ -29,8 +29,57 @@
             <li><a href="tel:+110001111111" class="mail-tel link">+11 (000) 111-11-11</a></li>
           </ul>
         </address>
+        <button type="button" class="menu-open" data-menu-open><svg class="menu-icon" width="32" height="22"><use href="./images/sprite.svg#icon-menu"></use></svg>
+        </button>
       </div>
-    </header> -->
+      <div class="mob-menu is-hidden" data-menu>
+        <div>
+          <button type="button" class="menu-close" data-menu-close><svg class="menu-close-icon" width="8" height="8"><use href="./images/sprite.svg#icon-close"></use></svg>
+        </button>
+          <ul class="list mob-menu-list">
+            <li class="menu-item"><a href="./index.html" class="menu-link">Studio</a></li>
+            <li class="menu-item"><a href="./portfolio.html" class="menu-link">Portfolio</a></li>
+            <li class="menu-item"><a href="" class="menu-link">Contacts</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="list menu-contacts">
+            <li class="menu-tel-item"><a href="tel:+110001111111" class="menu-tel link">+11 (000) 111-11-11</a></li>
+            <li class="menu-mail-item"><a href="mailto:info@devstudio.com" class="menu-mail link">info@devstudio.com</a></li>
+          </ul>
+          <ul class="list menu-soc-list">
+                <li class="menu-soc-item">
+                  <a href="" class="menu-soc-link">
+                    <svg class="menu-soc-icon" width="24" height="24">
+                      <use href="./images/sprite.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="menu-soc-item">
+                  <a href="" class="menu-soc-link">
+                    <svg class="menu-soc-icon" width="24" height="24">
+                      <use href="./images/sprite.svg#icon-twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="menu-soc-item">
+                  <a href="" class="menu-soc-link">
+                    <svg class="menu-soc-icon" width="24" height="24">
+                      <use href="./images/sprite.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="menu-soc-item">
+                  <a href="" class="menu-soc-link">
+                    <svg class="menu-soc-icon" width="24" height="24">
+                      <use href="./images/sprite.svg#icon-linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+        </div>
+      </div>
+    </header>
     <main>
         <section class="portfolio-section">
           <div class="container container-portfolio">
@@ -137,7 +186,7 @@
           </div>
       </section>
     </main>
-    <!-- <footer class="footer">
+    <footer class="footer">
       <div class="container container-footer">
         <div>
           <a href="./index.html" class="logo">Web<span class="logo-color-footer">Studio</span></a>
@@ -196,6 +245,6 @@
           </div>
         </div>
       </div>
-    </footer> -->
+    </footer>
   </body>
 </html>
