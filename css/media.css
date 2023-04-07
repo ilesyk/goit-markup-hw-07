@@ -32,13 +32,20 @@
     gap: 40px;
 }
 .container-header {
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    align-items: center;
 }
 .nav-contacts {
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+.nav-logo {
+    align-items: center;
+}
+.nav-menu {
+    align-items: center;
 }
 .logo {
     margin-right: 120px;
@@ -55,7 +62,7 @@ height: 4px;
 background: #404BBF;
 border-radius: 2px;
 position: relative;
-top: 20px;
+top: 28px;
 }
 .navigation-link {
 font-family: 'Roboto', sans-serif;
@@ -71,9 +78,8 @@ transition: color var(--transition);
     font-style: normal;
 }
 .mail-tel {
-    font-style: normal;
-font-size: 16px;
-line-height: 1.5;
+font-size: 12px;
+line-height: 1.17;
 letter-spacing: 0.02em;
 text-decoration: none;
 color: var(--text-color);
@@ -86,7 +92,7 @@ transition: color var(--transition);
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .hero {
-    background-image: url(../images/hero-bcg-tab-2x.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bcg-tab-2x.jpg);
   }
 }
     .hero-header {
@@ -157,19 +163,28 @@ transition: color var(--transition);
     .container-header {
         padding-top: 24px;
         padding-bottom: 24px;
+        align-items: center;
     }
     .nav-contacts {
     display: flex;
     flex-direction: row;
     gap: 40px;
-    margin-right: 156px;
 }
 .logo {
     margin-right: 76px;
 }
-
-
-    .hero {
+.nav-item::after {
+    top: 25px;
+}
+.mail-tel {
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.02em;
+text-decoration: none;
+color: var(--text-color);
+transition: color var(--transition);
+}
+.hero {
         padding: 188px 0;
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bcg-pc.jpg);
     }
@@ -177,7 +192,7 @@ transition: color var(--transition);
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .hero {
-    background-image: url(../images/hero-bcg-pc-2x.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bcg-pc-2x.jpg);
   }
 }
     .hero-header {
