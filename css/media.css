@@ -98,12 +98,6 @@ transition: color var(--transition);
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bcg-tab-2x.jpg);
   }
 }
-    .hero-header {
-        font-size: 56px;
-        line-height: 1.07;
-        max-width: 496px;
-        margin-bottom: 36px;
-    }
     .advantages-item {
         width: calc((100% - 24px) / 2)
     }
@@ -204,6 +198,9 @@ transition: color var(--transition);
         max-width: 496px;
         margin-bottom: 36px;
     }
+    .section.advantages {
+        padding-bottom: 0;
+    }
     .advantages-icon {
     display: flex;
     justify-content: center;
@@ -224,6 +221,9 @@ font-size: 20px;
 line-height: 1.2;
 letter-spacing: 0.02em;
 color: var(--navy-blue);
+    }
+    .container-products .flex-list {
+gap: 24px;
     }
     .text-style {
         font-weight: 400;

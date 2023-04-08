@@ -126,12 +126,16 @@ color: var(--button-hover);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 24px;
     transform: translateX(0);
-    transition: transform var(--transition);
+    transition: transform var(--transition), opacity var(--transition), visibility var(--transition);
+}
+.menu-link.current {
+    content: '';
+    color: var(--brand-color);
 }
 .mob-menu.is-hidden {
     transform: translateX(100%);
-    transition: transform var(--transition);
 }
 .menu-close {
     width: 24px;
@@ -199,6 +203,8 @@ display: flex;
 }
 /*hero*/
 .hero {
+    max-width: 1440px;
+    margin: 0 auto;
     background-color: var(--hero-background);
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bcg-mob.jpg);
     background-repeat: no-repeat;
