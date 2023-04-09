@@ -122,11 +122,11 @@ color: var(--button-hover);
     height: 100%;
     top: 0;
     background-color: var(--white);
-    padding: 24px 24px 40px 40px;
+    padding: 80px 24px 40px 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 24px;
+    gap: 40px;
     transform: translateX(0);
     transition: transform var(--transition), opacity var(--transition), visibility var(--transition);
 }
@@ -138,6 +138,9 @@ color: var(--button-hover);
     transform: translateX(100%);
 }
 .menu-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
     width: 24px;
     height: 24px;
     display: flex;
@@ -203,7 +206,6 @@ display: flex;
 }
 /*hero*/
 .hero {
-    max-width: 1440px;
     margin: 0 auto;
     background-color: var(--hero-background);
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bcg-mob.jpg);
@@ -221,7 +223,6 @@ background-size: cover;
 }
 .hero-header {
 max-width: 320px;
-font-weight: 700;
 font-size: 36px;
 line-height: 1.11;
 letter-spacing: 0.02em;

@@ -23,7 +23,7 @@
     width: 398px;
 }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
     .container {
         width: 768px;
     }
@@ -90,6 +90,7 @@ transition: color var(--transition);
 }
 .hero {
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bcg-tab.jpg);
+    max-width: 768px;
 }
 @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
@@ -99,7 +100,7 @@ transition: color var(--transition);
   }
 }
     .advantages-item {
-        width: calc((100% - 24px) / 2)
+        flex-basis: calc((100% - 24px) / 2)
     }
     .container-advantages > .flex-list {
         gap: 72px 24px;
@@ -183,6 +184,7 @@ transition: color var(--transition);
 }
 .hero {
         padding: 188px 0;
+        max-width: 1440px;
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bcg-pc.jpg);
     }
     @media (min-device-pixel-ratio: 2),
@@ -267,6 +269,9 @@ color: var(--navy-blue);
 .clients-list {
     gap: 24px;
 }
+.clients-item {
+        flex-basis: calc((100% - 120px) / 6)
+    }
 .clients > .container {
     max-width: 1158px;
 }
